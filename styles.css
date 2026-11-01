@@ -137,7 +137,8 @@ p { color: var(--muted); }
 .gh2-footer p, .gh2-footer a { color: rgba(255,255,255,.68); }
 .gh2-footer h3 { margin-bottom: 16px; color: #fff; font-size: 1.15rem; letter-spacing: 0; }
 .gh2-footer-brand p { max-width: 315px; font-size: .89rem; }
-.gh2-footer-links { display: grid; gap: 8px; font-size: .86rem; }
+.gh2-footer-links { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; margin: 0; padding: 0; font-size: .86rem; }
+.gh2-footer-links a { display: block; line-height: 1.45; white-space: normal; }
 .gh2-footer-links a:hover { color: #fff; }
 .gh2-footer-bottom { display: flex; justify-content: space-between; gap: 18px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.45); font-size: .74rem; }
 .gh2-page-hero { position: relative; min-height: 430px; display: flex; align-items: flex-end; overflow: hidden; background: var(--forest-deep); color: #fff; }
