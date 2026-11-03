@@ -30,7 +30,7 @@ const schema = (url, title, description, isHome) => ({
       image: imageUrl,
       ...(isHome ? {
         telephone: "+91 89547 97115",
-        email: "goldenhutresort@gmail.com",
+        email: "Goldenhutresortghr@gmail.com",
         address: { "@type": "PostalAddress", addressLocality: "Puranpur", addressRegion: "Uttar Pradesh", addressCountry: "IN" }
       } : {})
     },

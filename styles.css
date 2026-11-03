@@ -55,10 +55,10 @@ p { color: var(--muted); }
 .gh2-link::after { content: "↗"; color: var(--terracotta); transition: transform .2s ease; }
 .gh2-link:hover::after { transform: translate(3px, -3px); }
 .gh2-header { position: sticky; top: 0; z-index: 20; border-bottom: 1px solid rgba(227,226,217,.88); background: rgba(252,250,245,.95); backdrop-filter: blur(16px); }
-.gh2-header-inner { min-height: 82px; display: flex; align-items: center; gap: 25px; }
+.gh2-header-inner { min-height: 98px; display: flex; align-items: center; gap: 25px; }
 .gh2-brand { display: inline-flex; align-items: center; gap: 11px; flex: 0 0 auto; }
-.gh2-logo { display: block; width: 154px; height: 68px; object-fit: contain; object-position: center; }
-.gh2-brand--footer .gh2-logo { width: 185px; height: 92px; }
+.gh2-logo { display: block; width: 198px; height: 84px; object-fit: contain; object-position: center; }
+.gh2-brand--footer .gh2-logo { width: 230px; height: 112px; }
 .gh2-mark { display: grid; width: 40px; height: 40px; place-items: center; border: 1px solid var(--ochre); border-radius: 50%; color: var(--ochre); font: 600 1.1rem Georgia, serif; }
 .gh2-brand-text { display: grid; line-height: 1.04; }
 .gh2-brand-text strong { font: 600 1.13rem "Playfair Display", Georgia, serif; }
@@ -81,7 +81,7 @@ p { color: var(--muted); }
 .gh2-hero-content { position: relative; z-index: 1; padding: 120px 0 112px; }
 .gh2-hero h1 { max-width: 760px; margin: 0 0 22px; color: #fff; }
 .gh2-hero p { max-width: 620px; margin-bottom: 30px; color: rgba(255,255,255,.84); font-size: 1.1rem; }
-.gh2-hero .gh2-eyebrow { color: #f0cd88; }
+.gh2-hero .gh2-eyebrow { color: #f0cd88; font-size: 1rem; letter-spacing: .17em; }
 .gh2-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 .gh2-hero-meta { position: absolute; right: 0; bottom: 34px; z-index: 1; display: flex; gap: 12px; color: rgba(255,255,255,.85); font-size: .72rem; text-transform: uppercase; letter-spacing: .09em; }
 .gh2-hero-meta span { padding: 8px 12px; border: 1px solid rgba(255,255,255,.32); border-radius: 999px; }
@@ -213,7 +213,7 @@ p { color: var(--muted); }
 @media (max-width: 980px) {
   .gh2-nav, .gh2-header-cta { display: none; }
   .gh2-menu { display: block; }
-  .gh2-header-inner { min-height: 73px; }
+  .gh2-header-inner { min-height: 90px; }
   .gh2-hero { min-height: 650px; }
   .gh2-strip-inner { grid-template-columns: repeat(2, 1fr); }
   .gh2-strip-item:nth-child(2) { border-right: 0; }
@@ -232,7 +232,9 @@ p { color: var(--muted); }
   .gh2-section { padding: 76px 0; }
   .gh2-section-head { display: block; margin-bottom: 30px; }
   .gh2-section-head > p { margin-top: 14px; }
+  .gh2-logo { width: 190px; height: 80px; }
   .gh2-hero-content { padding: 92px 0 104px; }
+  .gh2-hero .gh2-eyebrow { font-size: .84rem; letter-spacing: .13em; }
   .gh2-hero h1 { font-size: clamp(2.75rem, 14vw, 4rem); }
   .gh2-hero p { font-size: 1rem; }
   .gh2-hero-meta { position: relative; right: auto; bottom: auto; z-index: 1; flex-wrap: wrap; padding-bottom: 25px; }
