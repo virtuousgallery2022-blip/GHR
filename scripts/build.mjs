@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 const packageRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sourceRoot = packageRoot;
 const siteRoot = path.resolve(process.env.SITE_ROOT || path.join(packageRoot, "dist"));
-const siteUrl = (process.env.SITE_URL || "https://golden-hut-resort-puranpur.virtuousgallery2022.chatgpt.site").replace(/\/+$/, "");
+const siteUrl = (process.env.SITE_URL || "https://goldenhutresort.com").replace(/\/+$/, "");
 const imageUrl = `${siteUrl}/assets/enhanced/hero-pool-enhanced.png`;
 
 const pages = [
