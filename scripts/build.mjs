@@ -18,6 +18,29 @@ const pages = [
   ["contact.html", "/contact/", "Contact Golden Hut Resort", "Contact Golden Hut Resort for room availability, safari planning and group stays."],
 ];
 
+const GOOGLE_TAG_ID = "GTM-W55DRQQG";
+
+const googleTag = `
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtm.js?id=${GOOGLE_TAG_ID}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>`;
+
+function ensureGoogleTag(html) {
+  if (html.includes(GOOGLE_TAG_ID)) {
+    return html;
+  }
+
+  return html.replace(
+    /<head\b[^>]*>/i,
+    (head) => head + googleTag
+  );
+}
+
+
 const schema = (url, title, description, isHome) => ({
   "@context": "https://schema.org",
   "@graph": [
@@ -76,6 +99,7 @@ for (const [relativePath, route, title, description] of pages) {
   const seo = `\n<link rel="canonical" href="${canonical}">\n<meta property="og:type" content="website">\n<meta property="og:title" content="${title}">\n<meta property="og:description" content="${description}">\n<meta property="og:url" content="${canonical}">\n<meta property="og:image" content="${imageUrl}">\n<meta name="twitter:card" content="summary_large_image">\n<meta name="twitter:title" content="${title}">\n<meta name="twitter:description" content="${description}">\n<meta name="twitter:image" content="${imageUrl}">\n<script type="application/ld+json" data-seo-schema>${JSON.stringify(schema(canonical, title, description, route === "/"))}</script>`;
   html = html.replace(/<meta name="description"[^>]*>/i, `<meta name="description" content="${description}">`).replace(/<img\b(?![^>]*\bdecoding=)[^>]*>/gi, (tag) => tag.replace(/\s*\/?>$/, ` decoding="async">`)).replace("</head>", `${seo}\n</head>`);
   html = html.replace(/(href="(?:\.\.\/)?(?:resort|safari|reserve|nearby|gallery|contact))\/index\.html"/g, "$1/\"");
+  html = ensureGoogleTag(html);
   await fs.writeFile(file, html);
 }
 
